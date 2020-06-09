@@ -22,12 +22,13 @@ public class Server {
         while(true) {
             //Crea el buffer para guardar los datos que se reciban
             buffer = new byte[Server.TALLA_BUFFER];
-            //Crea un datagrama con el buffer vacÃ­o para recibir los datos
+            //Crea un datagrama con el buffer vacío para recibir los datos
             DatagramPacket packet = new DatagramPacket(buffer, Server.TALLA_BUFFER);
             //Espera que llegue un datagrama y lo copia en el datagrama creado
             socket.receive(packet);
-            //presenta la infomaciÃ³n recibida
-            String carga = new String(packet.getData());
+            System.out.println("XYZ");
+            //presenta la infomación recibida
+            String carga = new String(packet.getData()).trim();
             System.out.println(
                 String.format("Recibido: %s; Desde: %s", carga, packet.getSocketAddress()));
 
